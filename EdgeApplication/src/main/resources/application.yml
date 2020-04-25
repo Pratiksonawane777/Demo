@@ -1,0 +1,22 @@
+spring:
+  profiles: default
+  application:
+    name: edge-service
+server:
+  port: 8081
+
+
+zuul:
+  ignored-services: '*'
+  ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+  ignoredPatterns: /**/api/**
+  routes:
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:9090/eureka/
