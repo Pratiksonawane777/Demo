@@ -3,10 +3,7 @@ package com.sunnytech.in.restweb;
 import com.sunnytech.in.service.HomeMadeService;
 import com.sunnytech.in.vo.HomeMadeUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +30,11 @@ public class AdminMadeController {
     @GetMapping("/homemade/getAll/users")
     public List<HomeMadeUser> getAllHomeMadeUsers() {
         return homeMadeService.getAllHomeMadeUsers();
+    }
+
+    @GetMapping("/homemade/getByPinCode")
+    public List<HomeMadeUser> getHomeeMadeUserByPincode(@RequestParam String pincode) {
+        return homeMadeService.getUsersByPinCode(pincode);
     }
 
 

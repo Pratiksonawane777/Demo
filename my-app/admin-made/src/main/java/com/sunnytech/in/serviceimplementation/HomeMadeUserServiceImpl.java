@@ -24,5 +24,10 @@ public class HomeMadeUserServiceImpl implements HomeMadeService {
         return homeMadeMongoRepository.findAll();
     }
 
+    @Override
+    public List<HomeMadeUser> getUsersByPinCode(String pinCode) {
+        return homeMadeMongoRepository.findByPinCode(pinCode);
+    }
+
 
 }

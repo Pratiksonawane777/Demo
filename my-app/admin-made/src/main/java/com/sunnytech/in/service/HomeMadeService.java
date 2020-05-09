@@ -9,4 +9,6 @@ public interface HomeMadeService {
     HomeMadeUser saveHomeMadeUser(HomeMadeUser homeMadeUser);
 
     List<HomeMadeUser> getAllHomeMadeUsers();
+
+    List<HomeMadeUser> getUsersByPinCode(String pinCode);
 }
