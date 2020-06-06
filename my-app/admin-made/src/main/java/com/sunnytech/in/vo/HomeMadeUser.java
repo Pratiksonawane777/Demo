@@ -17,5 +17,6 @@ public class HomeMadeUser {
     String password;
     String address;
     String pinCode;
+    WorkTheyCanDO workTheyCanDO;
 
 }

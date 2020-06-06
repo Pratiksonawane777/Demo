@@ -2,6 +2,7 @@ package com.sunnytech.in.restweb;
 
 import com.sunnytech.in.service.HomeMadeService;
 import com.sunnytech.in.vo.HomeMadeUser;
+import com.sunnytech.in.vo.WorkTheyCanDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,12 @@ public class AdminMadeController {
     @GetMapping("/homemade/getByPinCode")
     public List<HomeMadeUser> getHomeeMadeUserByPincode(@RequestParam String pincode) {
         return homeMadeService.getUsersByPinCode(pincode);
+    }
+
+    @PostMapping("/homemaid/add/work")
+    public WorkTheyCanDO saveWorkTheyCanDo(@RequestBody WorkTheyCanDO workTheyCanDO)
+    {
+        return homeMadeService.saveWorkTheyCanDo(workTheyCanDO);
     }
 
 

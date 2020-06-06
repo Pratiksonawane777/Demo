@@ -1,0 +1,10 @@
+version: '3'
+services:
+  eureka-server:
+    build: EurekaServer/
+    ports:
+      - "9090:9090"
+  edge-server:
+    build: EdgeApplication/
+    ports:
+      - "8081:8081"
