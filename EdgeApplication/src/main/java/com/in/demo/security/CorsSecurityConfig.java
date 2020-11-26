@@ -1,3 +1,5 @@
+/*
+
 package com.in.demo.security;
 
 
@@ -39,3 +41,5 @@ public class CorsSecurityConfig extends WebSecurityConfigurerAdapter {
         return source;
     }
 }
+
+*/

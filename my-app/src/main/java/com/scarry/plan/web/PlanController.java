@@ -21,5 +21,9 @@ public class PlanController {
         return planRepository.findAll();
     }
 
+    @GetMapping(value = "/getstring")
+    public String getSuccessString(){
+        return "Success";
+    }
 
 }

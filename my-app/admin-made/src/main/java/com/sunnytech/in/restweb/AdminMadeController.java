@@ -1,5 +1,6 @@
 package com.sunnytech.in.restweb;
 
+import com.sunnytech.in.feignclient.MyAppFeign;
 import com.sunnytech.in.service.HomeMadeService;
 import com.sunnytech.in.vo.HomeMadeUser;
 import com.sunnytech.in.vo.WorkTheyCanDO;
@@ -13,6 +14,10 @@ public class AdminMadeController {
 
     @Autowired
     HomeMadeService homeMadeService;
+
+    @Autowired
+    MyAppFeign myAppFeign;
+
 
 
     @GetMapping("/enter/homeMade")
@@ -42,6 +47,12 @@ public class AdminMadeController {
     public WorkTheyCanDO saveWorkTheyCanDo(@RequestBody WorkTheyCanDO workTheyCanDO)
     {
         return homeMadeService.saveWorkTheyCanDo(workTheyCanDO);
+    }
+
+
+    @GetMapping("/test")
+    public String testFeign() {
+        return myAppFeign.getSuccessString();
     }
 
 
